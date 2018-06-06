@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    title
+{% endblock %}
+{% block stylesheets %}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/cover.css') }}" rel="stylesheet">
+    <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+  {% endblock %}
+{% block body %}
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="float-left">Cover</h3>
+          <nav class="nav float-right justify-content-center">
+            <a class="nav-link" href="{{ path('user_registration') }}">Register</a>
+            <a class="nav-link" href="{{ path('login') }}">Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main">
+        <h1 class="cover-heading">blah blah blah</h1>
+        <p class="lead">blah blah blah blah</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        </p>
+      </main>
+
+      <footer class="mt-auto">
+      </footer>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+{% endblock %}

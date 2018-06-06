@@ -1,0 +1,42 @@
+{% extends 'sistema.html.twig' %}
+
+{% block title %}Vanduo{% endblock %}
+
+{% block content %}
+    <h1>Vanduo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vanduo.id }}</td>
+            </tr>
+            <tr>
+                <th>Userid</th>
+                <td>{{ vanduo.userid }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ vanduo.date ? vanduo.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Iki</th>
+                <td>{{ vanduo.iki }}</td>
+            </tr>
+            <tr>
+                <th>Nuo</th>
+                <td>{{ vanduo.nuo }}</td>
+            </tr>
+            <tr>
+                <th>Tarifas</th>
+                <td>{{ vanduo.tarifas }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vanduo_index') }}">back to list</a>
+
+    <a href="{{ path('vanduo_edit', {'id': vanduo.id}) }}">edit</a>
+
+    {{ include('vanduo/_delete_form.html.twig') }}
+{% endblock %}

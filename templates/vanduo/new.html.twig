@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vanduo{% endblock %}
+
+{% block body %}
+    <h1>Create new Vanduo</h1>
+
+    {{ include('vanduo/_form.html.twig') }}
+
+    <a href="{{ path('vanduo_index') }}">back to list</a>
+{% endblock %}
