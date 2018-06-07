@@ -1,4 +1,64 @@
 
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    title
+{% endblock %}
+{% block stylesheets %}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/cover.css') }}" rel="stylesheet">
+    <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+{% endblock %}
+{% block body %}
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+        <main role="main">
+<h2>Registracija</h2>
+
+
+{{ form_start(form) }}
+<div class="form-group">
+    {{ form_row(form.username, {'attr' : {'placeholder' : 'Username'}}) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.email, {'attr' : {'placeholder' : 'Email'}}) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.plainPassword.first, {'attr' : { 'class' : 'form-control', 'placeholder' : 'Password'}}) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.plainPassword.second, {'attr' : { 'class' : 'form-control', 'placeholder' : 'Repeat Password'}}) }}
+</div>
+<button class=" btn btn-lg btn-success" type="submit">Register!</button>
+{{ form_end(form) }}
+
+            
+
+        </main>
+
+        <footer class="mt-auto">
+        </footer>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+{% endblock %}
+
+
+
+{#
 {{ form_start(form) }}
     {{ form_row(form.username) }}
     {{ form_row(form.email) }}
@@ -7,3 +67,4 @@
 
 <button type="submit">Register!</button>
 {{ form_end(form) }}
+#}

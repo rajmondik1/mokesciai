@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SaltasVanduo{% endblock %}
+
+{% block body %}
+    <h1>Edit SaltasVanduo</h1>
+
+    {{ include('saltas_vanduo/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('saltas_vanduo_index') }}">back to list</a>
+
+    {{ include('saltas_vanduo/_delete_form.html.twig') }}
+{% endblock %}

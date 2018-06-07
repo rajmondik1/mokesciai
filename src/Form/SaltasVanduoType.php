@@ -2,18 +2,17 @@
 
 namespace App\Form;
 
-use App\Entity\Vanduo;
+use App\Entity\SaltasVanduo;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class VanduoType extends AbstractType
+class SaltasVanduoType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date', DateType::class)
+            ->add('date')
             ->add('iki')
             ->add('nuo')
             ->add('tarifas')
@@ -23,7 +22,7 @@ class VanduoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Vanduo::class,
+            'data_class' => SaltasVanduo::class,
         ]);
     }
 }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Elektra{% endblock %}
+
+{% block body %}
+    <h1>Edit Elektra</h1>
+
+    {{ include('elektra/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('elektra_index') }}">back to list</a>
+
+    {{ include('elektra/_delete_form.html.twig') }}
+{% endblock %}

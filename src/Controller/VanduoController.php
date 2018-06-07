@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/vanduo")
+ * @Route("/hot")
  */
 class VanduoController extends Controller
 {
@@ -22,7 +22,8 @@ class VanduoController extends Controller
     {
 
         return $this->render('vanduo/index.html.twig', [
-            'vanduos' => $vanduoRepository->findBy(['userid' => $this->getUser()->getId()])
+            'vanduos' => $vanduoRepository->findBy(['userid' => $this->getUser()->getId()],[ 'date' => 'ASC']),
+            'username' => $this->getUser()->getUsername()
         ]);
     }
 

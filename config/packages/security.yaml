@@ -41,4 +41,7 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/sistema, roles: ROLE_USER }
+         - { path: ^/elektra, roles: ROLE_USER }
+         - { path: ^/hot, roles: ROLE_USER }
+         - { path: ^/cold, roles: ROLE_USER }
          - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

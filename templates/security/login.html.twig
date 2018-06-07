@@ -1,19 +1,69 @@
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
-<form action="{{ path('login') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <title>Floating labels example for Bootstrap</title>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/floating-labels.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+
+<form class="form-signin" action="{{ path('login') }}" method="post">
+    <div class="text-center mb-4">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Prisijungimas</h1>
+    </div>
+<div class="alert alert-danger" style="display: none" role="alert">
+    {% if error %}
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+    {% endif %}
+</div>
+    <div class="form-label-group">
+        <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Username" required autofocus/>
+        <label  for="username">Username:</label>
+    </div>
+    <div class="form-label-group">
+        <input class="form-control" type="password" id="password" name="_password" placeholder="Password" required/>
+        <label for="password">Password:</label>
+    </div>
 
     {#
         If you want to control the URL the user
         is redirected to on success (more details below)
         <input type="hidden" name="_target_path" value="/account" />
+    #}{#
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+    </div>
     #}
-
-    <button type="submit">login</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted text-center">
+    <a href="{{ path('user_registration') }}" class="float mt-5 mb-3 text-center">Registruotis</a>
+        &copy; 2018</p>
 </form>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+
+<script>
+    {% if error %}
+    $('.alert').show();
+    {% endif %}
+</script>
+</body>
+</html>
