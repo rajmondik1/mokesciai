@@ -108,7 +108,6 @@
                                 <td>{{ elektra.iki - elektra.nuo }}</td>
                                 <td>{{ ((elektra.iki - elektra.nuo)* elektra.tarifas)|round(2, 'floor') }}</td>
                                 <td>
-                                    <a href="{{ path('elektra_show', {'id': elektra.id}) }}">show</a>
                                     <a href="{{ path('elektra_edit', {'id': elektra.id}) }}">edit</a>
                                 </td>
                             </tr>
